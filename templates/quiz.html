@@ -1,0 +1,132 @@
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title></title>
+	<link href="./static/css/quiz.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/css/navbar.css" />
+</head>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<body>
+<center>
+      <div class="m-nav m-red">
+        <div style="float: right;">
+          <input type="text" placeholder="Search Box" style="float: left;">
+          <li style="margin-right: 10px;">
+            <a href="/profile">
+              <div class="tooltip"><i style="font-size:27px; float: right;" class="material-icons">face</i>
+              <span class="tooltiptext">Account</span>
+              </div>
+            </a>
+          </li>
+          <div class="buttons-con1" style="margin-top: 10px; float: right; display: inline">
+            <div class="action-link-wrap1" style="margin-top: 0px">
+              <a href="/logout" class="link-button" style="float: right; font-family: Roboto;">Logout</a>
+            </div>
+          </div>
+        </div>
+        <li>
+          <a href="/">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">home</i>
+              <span class="tooltiptext">Home</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/SolveEquations">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">school</i>
+              <span class="tooltiptext">Solve</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/Quiz">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">create</i>
+              <span class="tooltiptext">Quiz</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/recommend">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">contact_support</i>
+              <span class="tooltiptext">Practice</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/memo">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">assignment</i>
+              <span class="tooltiptext">Memo</span>
+            </div>
+          </a>
+        </li>
+      </div>
+    </center>
+<div class="wrapper">
+  <canvas id="geometric" height="1000em" width="2000em">
+  </canvas>
+  <div class="accent">
+  </div>
+</div>
+<h1 id="math-heading"> Mathematics Quiz</h1>
+<p id="math-powered">Powered by Algebra Site</p>
+
+
+<div class="buttons-con">
+    <div class="action-link-wrap">
+      <a onclick="start_quiz()" class="link-button" id="startbtn">Ready, Set, Go</a>
+    </div>
+  </div>
+
+
+<div class="stopwatch" id="stopwatch" role= img>
+            <div class="knob">
+                <div class="handle">
+                    <div class="inner-handle"></div>
+                </div>
+                <div class="base"></div>
+            </div>
+            <div class="timer">
+                <div class="inner-shadow-top-left"></div>
+                <div class="inner-shadow-top-right"></div>
+                <div class="inner-shadow-bottom-left"></div>
+                <div class="inner-timer">
+                    <ul class="hours">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="counter">
+                        <span></span>
+                    </div>
+                    <div class="inner-timer-shadow"></div>
+                </div>
+                <div class="circle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="toggle">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="light">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+	<center><div id="chartContainer" style="background-color: black;height: 300px; width: 30%;"></div><center>
+	
+</body>
+<script src="./static/js/quiz.js"></script>
+</html>

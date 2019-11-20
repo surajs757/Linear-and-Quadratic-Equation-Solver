@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>pencil - scss</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="../static/css/navbar.css">
+		<link rel="stylesheet" href="../static/css/solve.css">
+	</head>
+
+	<body>
+		<center>
+			<div class="m-nav m-red">
+				<div style="float: right;">
+					<input type="text" placeholder="Search Box" style="float: left;">
+					<li style="margin-right: 10px;">
+						<a href="/profile">
+							<div class="tooltip"><i style="font-size:27px; float: right;" class="material-icons">face</i>
+							<span class="tooltiptext">Account</span>
+							</div>
+						</a>
+					</li>
+					<div class="buttons-con1" style="margin-top: 10px; float: right; display: inline">
+						<div class="action-link-wrap1" style="margin-top: 0px">
+							<a href="/logout" class="link-button" style="float: right; font-family: Roboto;">Logout</a>
+						</div>
+					</div>
+				</div>
+				<li>
+					<a href="/">
+						<div class="tooltip"><i style="font-size:27px;" class="material-icons">home</i>
+							<span class="tooltiptext">Home</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="/SolveEquations">
+						<div class="tooltip"><i style="font-size:27px;" class="material-icons">school</i>
+							<span class="tooltiptext">Solve</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="/Quiz">
+						<div class="tooltip"><i style="font-size:27px;" class="material-icons">create</i>
+							<span class="tooltiptext">Quiz</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="/recommend">
+						<div class="tooltip"><i style="font-size:27px;" class="material-icons">contact_support</i>
+							<span class="tooltiptext">Practice</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="/memo">
+						<div class="tooltip"><i style="font-size:27px;" class="material-icons">assignment</i>
+							<span class="tooltiptext">Memo</span>
+						</div>
+					</a>
+				</li>
+			</div>
+		</center>
+		<div id="container" style="margin-top:6%;">
+			<div class="divSquare">
+				<center>
+					<h2>Solve Linear Equations</h2><br>
+					<input type="text" id="Linear_x1" class="input-data" name="x1"/><label>x</label> 
+					<label class="label1">+</label>
+					<input type="text" id="Linear_x2" class="input-data" name="y1"/><label>y</label> 
+					<label class="label1">=</label><input type="text" id="Linear_v1" class="input-data" name="v1"/>
+					<br>
+					<input type="text" id="Linear_x3" class="input-data" name="x2"/><label>x</label> 
+					<label class="label1">+</label>
+					<input type="text" id="Linear_x4" class="input-data" name="y2"/><label>y</label>
+					<label class="label1">=</label><input type="text" id="Linear_v2" class="input-data" name="v2"/>
+					<br>
+					<div class="buttons-con">
+						<div class="action-link-wrap">
+							<a class = "link-button" onclick="LinearSolve()">Solve</a>	
+						</div>
+					</div>
+					<div style="color:white; margin:2%; padding:4%; font-size: 20px;" id="LinearResult"></div>
+				</center>
+				
+			</div>
+			<div class="divSquare">
+				<center>
+					<h2>Solve Quadratic Equations</h2> <br>
+					<input type="text" id="quad_x1" class="input-data" name="x12"/><label>x<sup>2</sup></label> 
+					<label class="label1">+</label>
+					<input type="text" id="quad_x2" class="input-data" name="x11"/><label>x</label> 
+					<label class="label1">+</label>
+					<input type="text" id="quad_x3" class="input-data" name="c"/><label>=</label> 
+					<label class="label1">0</label>
+					<br>
+					<div class="buttons-con">
+						<div class="action-link-wrap">
+							<a class = "link-button" onclick="QuadSolve()">Solve</a>
+						</div>
+					</div>
+					<div style="color:white; margin:2%; padding:4%; font-size: 20px;" id="QuadResult"></div>
+				</center>
+			</div>
+			<div style='clear:both'></div>
+			<div class="divSquare">
+				<center>
+					<h2>Plot graphs for Equations</h2><br>
+					<input type="text" id="plot_eqn" class="input-data" name="plot" style="margin-top: 5%; width: 40%" />
+					<div class="buttons-con">
+						<div class="action-link-wrap">
+							<a class="link-button" onclick="Plot()">Plot</a>
+						</div>
+					</div>
+					<br><br>
+					<img src="" id="img_plot"/>
+					<br>
+					<div class="buttons-con">
+						<div class="action-link-wrap">
+							<a class="link-button" style="display: none" onclick="ClearButton()" id="clear_button">Clear</a>
+						</div>
+					</div>
+				</center>
+			</div>
+			<div class="divSquare">
+				<center>
+					<h2>Solve equation by uploading image</h2><br>
+					<form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+						<input type = "file" name = "file"  class="custom-file-input" style="margin-top: 5%;"/>
+						<div class="buttons-con1">
+							<div class="action-link-wrap1">
+								<!--<a class = "link-button" href="/uploader">Submit</a>-->
+								<input type="submit" class="upload"/>
+							</div>
+						</div>
+					</form>
+					{% if filename %}
+					<br><br>
+						<img src="{{filename}}" id="pic">
+						<div class="buttons-con1">
+							<div class="action-link-wrap1">
+								<input type="button" id="go_button" class="upload" value="Process" onclick="process_tesseract()" />
+							</div>
+						</div>
+						<div id="ocr_results" style="color:white; margin:1%; padding:4%; font-size: 20px;"> </div>
+						<div id="ocr_status" style="color:white; font-size: 20px;"> </div>
+						<div id="result_ocr" style="color:white; margin:1%; padding:4%; font-size: 20px;"> </div>
+					{% endif %}
+				</center>
+			</div>
+		</div>
+		<div class="pencil">
+			<div class="eraser"></div>
+			<div class="covered-wood">
+				<div class="eraser-holder"></div>
+				<div class="wooden-part"></div>
+			</div>
+			<div class="naked-wood"></div>
+			<div class="graphite"></div>
+		</div>
+		<script src="../static/js/solve.js"></script>
+		<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+	</body>
+</html>

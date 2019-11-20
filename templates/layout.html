@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="AlgebraSite">
+<head>
+	<!--<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>dashboard</title>
+	<style type="text/css">
+		body {background:url(http://i.hizliresim.com/68k46P.png)center center fixed no-repeat; background-size:cover; margin:0; padding:0; background-color: #2F3242;}
+
+		.m-red {background:#EF3B3A; color:#fff; text-decoration:none;}
+
+		.m-nav {width:100%; min-width:600px; height:55px; display:inline-block; text-align:right;}
+
+		.m-nav input[type="text"] {float:right; background:rgba(255,255,255,0.3); border:none; padding:8px; outline:none; color:#fff; margin-top:10px; margin-right:10px; font-family:"Roboto",Arial sans-serif; height:20px; display:inline-block; transition:0.5s ease all; width:30%; min-width:200px; max-width:600px;}
+
+		.m-nav input[type="text"]:hover {background:rgba(255,255,255,0.5); transition:0.5s ease all;}
+
+		.m-nav input[type="text"]:focus {background:#fff; color:#333; transition:0.5s ease all;}
+
+		.m-nav input::-webkit-input-placeholder {color:rgba(255,255,255,0.6); font-family:"Roboto",Arial sans-serif;}
+
+		.m-nav input::-moz-input-placeholder {color:rgba(255,255,255,0.6); font-family:"Roboto",Arial sans-serif;}
+
+		.m-nav input:-moz-input-placeholder {color:rgba(255,255,255,0.6); font-family:"Roboto",Arial sans-serif;}
+
+		.m-nav input::-o-input-placeholder {color:rgba(255,255,255,0.6); font-family:"Roboto",Arial sans-serif;}
+
+		.m-nav li {list-style:none; float:left; display:inline-block;}
+
+		.m-nav li a {text-decoration:none; padding:6px 9px; transition:0.70s ease all; margin-top:7px; margin-left:7px; display:inline-block; cursor:pointer;}
+
+		.m-nav li a:hover {background:rgba(255,255,255,0.3); transition:0.70s ease all;}
+
+.buttons-con1 .action-link-wrap1 {
+  margin-top: 40px;
+}
+.buttons-con1 .action-link-wrap1 a {
+  background: #68c950;
+  padding: 8px 25px;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px
+}
+.buttons-con1 .action-link-wrap1 a:hover {
+  /*background: #5A5C6C;*/
+  /*background: #EF4A5B;*/
+  /*background: #007FB2;*/
+  background:rgba(255,255,255,0.3); 
+  transition:0.70s ease all;
+  color: #fff;
+}
+
+.material-icons{
+	color: white;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    /*background-color: #FFCD3C;*/
+    color: #5A5C6C;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%; 
+    margin-left: -40px;
+    margin-top: 20px;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    background:rgba(255,255,255,0.3); 
+  	/*transition:0.70s ease all;*/
+  	color: #fff;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255,255,255,0.3) transparent;
+  	/*transition:0.70s ease all;*/
+  	color: #fff;
+}
+
+/*.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #EF3B3A;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    right: 0;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}*/
+	</style>
+</head>
+<body>
+  <center>
+      <div class="m-nav m-red">
+        <div style="float: right;">
+          <input type="text" placeholder="Search Box" style="float: left;">
+          <li style="margin-right: 10px;">
+            <a href="/profile">
+              <div class="tooltip"><i style="font-size:27px; float: right;" class="material-icons">face</i>
+              <span class="tooltiptext">Account</span>
+              </div>
+            </a>
+          </li>
+          <div class="buttons-con1" style="margin-top: 10px; float: right; display: inline">
+            <div class="action-link-wrap1" style="margin-top: 0px">
+              <a href="/logout" class="link-button" style="float: right; font-family: Roboto;">Logout</a>
+            </div>
+          </div>
+        </div>
+        <li>
+          <a href="/">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">home</i>
+              <span class="tooltiptext">Home</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/SolveEquations">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">school</i>
+              <span class="tooltiptext">Solve</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/Quiz">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">create</i>
+              <span class="tooltiptext">Quiz</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/recommend">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">contact_support</i>
+              <span class="tooltiptext">Practice</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/memo">
+            <div class="tooltip"><i style="font-size:27px;" class="material-icons">assignment</i>
+              <span class="tooltiptext">Memo</span>
+            </div>
+          </a>
+        </li>
+      </div>
+    </center>
+</body>
+</html>
