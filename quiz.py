@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov  8 18:03:05 2018
 
-@author: Aishwarya
-"""
 import numpy as np
 import json
 
